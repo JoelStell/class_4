@@ -27,12 +27,32 @@ products = [
 print("--------------")
 print("THERE ARE " + str(len(products)) + " PRODUCTS:")
 
+#
+#PRODUCTS
+#
 
 products = sorted(products, key=operator.itemgetter("name"))
 
 for product in products:
     price_usd = ' (${0:.2f})'.format(product["price"])
     print(" + " + product["name"] + price_usd)
+
+#
+#DEPARTMENTS
+#create an empty list then loop through an existing list to create a new list - use append
+
+
+departments = []
+
+for product in products:
+  departments.append(product["department"])
+
+departments = set(departments) #removes duplicate items
+departments = list(departments) #converts from a set back to a list
+
+print("--------------")
+print("THERE ARE " + str(len(departments)) + " DEPARTMENTS:")
+
 
 
 
