@@ -56,7 +56,7 @@ departments = list(departments) #converts from a set back to a list
 print("--------------")
 print("THERE ARE " + str(len(departments)) + " DEPARTMENTS:")
 
-
+departments = sorted(departments)
 
 for department in departments:
     #price_usd = ' (${0:.2f})'.format(product["price"])
