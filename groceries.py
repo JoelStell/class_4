@@ -44,16 +44,23 @@ for product in products:
 
 departments = []
 
+products = sorted(products, key=operator.itemgetter("department"))
+
 for product in products:
   departments.append(product["department"])
 
 departments = set(departments) #removes duplicate items
 departments = list(departments) #converts from a set back to a list
 
+
 print("--------------")
 print("THERE ARE " + str(len(departments)) + " DEPARTMENTS:")
 
 
+
+for department in departments:
+    #price_usd = ' (${0:.2f})'.format(product["price"])
+    print(" + " + department.title())
 
 
 
