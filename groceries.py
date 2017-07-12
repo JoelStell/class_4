@@ -49,18 +49,23 @@ products = sorted(products, key=operator.itemgetter("department"))
 for product in products:
   departments.append(product["department"])
 
-departments = set(departments) #removes duplicate items
-departments = list(departments) #converts from a set back to a list
+unique_departments = set(departments) #removes duplicate items
+unique_departments = list(unique_departments) #converts from a set back to a list
 
 
 print("--------------")
-print("THERE ARE " + str(len(departments)) + " DEPARTMENTS:")
+print("THERE ARE " + str(len(unique_departments)) + " DEPARTMENTS:")
 
-departments = sorted(departments)
+unique_departments = sorted(unique_departments) #sorts the department list
 
-for department in departments:
-    #price_usd = ' (${0:.2f})'.format(product["price"])
-    print(" + " + department.title())
+for department_name in unique_departments:
+    count_of_products = departments.count(department_name)
+    print(" + " + department_name.title() + " (" + str(count_of_products)+ " products)")
+
+
+
+
+
 
 
 
